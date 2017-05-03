@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#OPT_VGA=std
+#OPT_DPY=$2
+OPT_VGA="qxl -spice port=5930,disable-ticketing -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent"
+
+OPT_MEM='2048'
+OPT_SMP='2'
+OPT_CPU='qemu64,+ssse3,+sse4.1,+sse4.2,+x2apic'
+
+IMAGE_NAME="core-image-sato"
+FS_TYPE="ext4"
+
+MACHINE="qemux86-64"
+
+ROOTFS=${IMAGE_NAME}-${MACHINE}.${FS_TYPE}
+export ROOTFS
+
+echo $MACHINE
+
+runqemu qemux86-64 qemuparams="-m ${OPT_MEM} -usbdevice tablet -cpu ${OPT_CPU} -smp ${OPT_SMP} -vga ${OPT_VGA}" serial kvm 
+
+#cd tmp/deploy/images/${MACHINE}
+
+#runqemu bzImage-qemux86-64.bin qemuparams="-m ${OPT_MEM} -usbdevice tablet -cpu ${OPT_CPU} -smp ${OPT_SMP} -vga ${OPT_VGA}" serial kvm 
+
