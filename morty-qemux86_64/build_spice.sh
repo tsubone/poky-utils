@@ -33,6 +33,13 @@ git config user.email "takashi.tsubone@gmail.com"
 #git checkout -b morty origin/morty
 cd ..
 
+git clone git://github.com/tsubone/meta-virt-gpu-native.git
+cd meta-virt-gpu-native
+git config user.name "Takashi Tsubone"
+git config user.email "takashi.tsubone@gmail.com"
+#git checkout -b morty origin/morty
+cd ..
+
 cd poky
 source oe-init-build-env
 
@@ -42,6 +49,7 @@ echo "BBLAYERS =+ \" $topdir/meta-openembedded/meta-networking \""  >> conf/bbla
 echo "BBLAYERS =+ \" $topdir/meta-virtualization \""  >> conf/bblayers.conf
 echo "BBLAYERS =+ \" $topdir/meta-cloud-services \""  >> conf/bblayers.conf
 echo "BBLAYERS =+ \" $topdir/meta-spice-native \""  >> conf/bblayers.conf
+echo "BBLAYERS =+ \" $topdir/meta-virt-gpu-native \""  >> conf/bblayers.conf
 
 echo "MACHINE = \"qemux86-64\"" >> conf/local.conf
 
