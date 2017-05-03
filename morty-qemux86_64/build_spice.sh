@@ -4,27 +4,12 @@ echo "$PWD"
 topdir="$PWD"
 echo "$topdir"
 
-FILES_PATH=/home/tsubone/bin/aglorg-salvator/patch
 YOCTO_DIR=/home/YOCTO
-
-function do_patch
-{
-    echo
-    echo "Apply $2 in $1"
-    cd $1
-    patch -p1 < ${FILES_PATH}/$2 || abort "Couldn't apply $2 in $1..."
-    cd ..
-}
 
 git clone git://git.yoctoproject.org/poky.git
 cd poky
 git checkout -b morty origin/morty
 cd ..
-
-#git clone git://git.openembedded.org/openembedded-core
-#cd openembedded-core
-#git checkout -b morty origin/morty
-#cd ..
 
 git clone git://git.openembedded.org/meta-openembedded
 cd meta-openembedded
