@@ -22,10 +22,10 @@ export PATCH_DIR=meta-rcar-gen3/docs/sample/patch/patch-for-linaro-gcc
 patch -p1 < ${PATCH_DIR}/0001-rcar-gen3-add-readme-for-building-with-Linaro-Gcc.patch
 unset PATCH_DIR
 
-PKGS_DIR=/home/YOCTO/pkg/renesas/
+
 
 cd $WORK/
-PKGS_DIR=$WORK/../proprietary
+PKGS_DIR=/home/YOCTO/pkg/renesas/v2.23.0
 cd $WORK/meta-renesas
 #sh meta-rcar-gen3/docs/sample/copyscript/copy_proprietary_softwares.sh -f $PKGS_DIR
 sh meta-rcar-gen3/docs/sample/copyscript/copy_evaproprietary_softwares.sh -f $PKGS_DIR
