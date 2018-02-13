@@ -42,6 +42,7 @@ cp conf/local-wayland.conf conf/local.conf
 echo "DISTRO_FEATURES_append = \" use_eva_pkg\"" >> conf/local.conf
 echo "DL_DIR=\"/home/YOCTO/downloads\"" >> conf/local.conf
 
+#for adding mkfs.ext4.
 echo "IMAGE_INSTALL_append = \" e2fsprogs\"" >> conf/local.conf
 
 bitbake core-image-weston
