@@ -43,5 +43,14 @@ echo "DL_DIR=\"/home/YOCTO/downloads\"" >> conf/local.conf
 
 #for adding mkfs.ext4.
 echo "IMAGE_INSTALL_append = \" e2fsprogs\"" >> conf/local.conf
+echo "IMAGE_INSTALL_append = \" gstreamer1.0-plugins-bad\"" >> conf/local.conf
+echo "IMAGE_INSTALL_append = \" gstreamer1.0-plugins-ugly\"" >> conf/local.conf
+echo "IMAGE_INSTALL_append = \" psmic\"" >> conf/local.conf
+echo "IMAGE_INSTALL_append = \" usbutils\"" >> conf/local.conf
+#echo "IMAGE_INSTALL_append = \" kmscube\"" >> conf/local.conf
+#echo "IMAGE_INSTALL_append = \" glmark2\"" >> conf/local.conf
+
+#for debug
+echo "EXTRA_IMAGE_FEATURES = \"dbg-pkgs debug-tweaks tools-debug\"" >> conf/local.conf
 
 bitbake core-image-weston
