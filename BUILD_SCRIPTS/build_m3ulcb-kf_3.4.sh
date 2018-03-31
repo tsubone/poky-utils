@@ -46,6 +46,10 @@ echo "DISTRO_FEATURES_append = \" use_eva_pkg\"" >> conf/local.conf
 echo "DISTRO_FEATURES_append = \" v4l2-renderer\"" >> conf/local.conf
 echo "DISTRO_FEATURES_append = \" h264enc_lib\"" >> conf/local.conf
 echo "DISTRO_FEATURES_append = \" avb\"" >> conf/local.conf
+
+echo "PACKAGECONFIG_append_pn-gstreamer1.0-plugins-bad = \" opencv\"" >> conf/local.conf
+echo "PREFERRED_VERSION_opencv = \"3.2+git%\"" >> conf/local.conf
+
 echo "DL_DIR=\"/home/YOCTO/downloads\"" >> conf/local.conf
 
 #for adding mkfs.ext4.
