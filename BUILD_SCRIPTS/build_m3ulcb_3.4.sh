@@ -39,14 +39,18 @@ cp $WORK/meta-renesas/meta-rcar-gen3/docs/sample/conf/m3ulcb/poky-gcc/mmp/*.conf
 cd $WORK/build
 cp conf/local-wayland.conf conf/local.conf
 echo "DISTRO_FEATURES_append = \" use_eva_pkg\"" >> conf/local.conf
+echo "DISTRO_FEATURES_append = \" v4l2-renderer\"" >> conf/local.conf
+echo "DISTRO_FEATURES_append = \" h264enc_lib\"" >> conf/local.conf
+echo "DISTRO_FEATURES_append = \" avb\"" >> conf/local.conf
 echo "DL_DIR=\"/home/YOCTO/downloads\"" >> conf/local.conf
 
 #for adding mkfs.ext4.
 echo "IMAGE_INSTALL_append = \" e2fsprogs\"" >> conf/local.conf
 echo "IMAGE_INSTALL_append = \" gstreamer1.0-plugins-bad\"" >> conf/local.conf
 echo "IMAGE_INSTALL_append = \" gstreamer1.0-plugins-ugly\"" >> conf/local.conf
-echo "IMAGE_INSTALL_append = \" psmic\"" >> conf/local.conf
+#echo "IMAGE_INSTALL_append = \" psmic\"" >> conf/local.conf
 echo "IMAGE_INSTALL_append = \" usbutils\"" >> conf/local.conf
+echo "IMAGE_INSTALL_append = \" inetutils inetutils-telnetd\"" >> conf/local.conf
 #echo "IMAGE_INSTALL_append = \" kmscube\"" >> conf/local.conf
 #echo "IMAGE_INSTALL_append = \" glmark2\"" >> conf/local.conf
 
